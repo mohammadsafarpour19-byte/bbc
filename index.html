@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>فروشگاه ایران‌مارکت | الهام‌گرفته از علی‌اکسپرس و دیجی‌کالا</title>
+  <meta name="description" content="فروشگاه آنلاین با دسته‌بندی کامل: زنانه، مردانه، بچگانه، موبایل، لوازم دیجیتال و تخفیف‌های ویژه.">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-row">
+    <a class="brand" href="#home">ایران‌مارکت</a>
+    <form class="search" onsubmit="event.preventDefault(); doSearch(this.q.value);">
+      <input name="q" id="q" placeholder="جستجو در محصولات...">
+      <button aria-label="جستجو">🔎</button>
+    </form>
+    <div class="actions">
+      <a href="#" title="ورود">ورود</a>
+      <a href="#" title="سبد" class="cart">🛒 <span id="cart-count">0</span></a>
+    </div>
+  </div>
+  <nav class="nav container" aria-label="دسته‌بندی‌ها">
+    <button class="menu-toggle" aria-expanded="false">☰ منو</button>
+    <ul class="menu" id="main-menu">
+      <li class="has-mega"><a href="#cat/زنانه">زنانه</a></li>
+      <li class="has-mega"><a href="#cat/مردانه">مردانه</a></li>
+      <li class="has-mega"><a href="#cat/بچگانه">بچگانه</a></li>
+      <li><a href="#cat/کفش">کفش</a></li>
+      <li><a href="#cat/کیف و اکسسوری">کیف و اکسسوری</a></li>
+      <li><a href="#cat/زیبایی و بهداشت">زیبایی و بهداشت</a></li>
+      <li class="has-mega"><a href="#cat/لوازم دیجیتال">لوازم دیجیتال</a></li>
+      <li><a href="#cat/موبایل و لوازم جانبی">موبایل و لوازم جانبی</a></li>
+      <li><a href="#cat/خانه و آشپزخانه">خانه و آشپزخانه</a></li>
+      <li><a href="#cat/ورزش و سفر">ورزش و سفر</a></li>
+      <li><a href="#cat/خودرو و ابزار">خودرو و ابزار</a></li>
+      <li><a href="#deals">تخفیف‌های ویژه ⚡</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <!-- HERO SLIDER -->
+  <section class="hero" id="home">
+    <div class="slider" id="hero-slider" aria-label="اسلایدر تخفیف‌ها">
+      <!-- Slides injected by JS -->
+    </div>
+  </section>
+
+  <!-- DEALS STRIP -->
+  <section class="deals-strip" aria-label="تخفیف‌های ویژه">
+    <div class="strip" id="deals-strip">
+      <!-- Deal cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filters" id="filters" hidden>
+    <div class="filter-row">
+      <div>
+        <label>مرتب‌سازی:
+          <select id="sort" onchange="applySort(this.value)">
+            <option value="popular">محبوب‌ترین</option>
+            <option value="new">جدیدترین</option>
+            <option value="price-asc">ارزان‌ترین</option>
+            <option value="price-desc">گران‌ترین</option>
+            <option value="discount-desc">بیشترین تخفیف</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>حداکثر قیمت (تومان):
+          <input type="number" id="maxPrice" placeholder="مثلاً 500000" oninput="applyPriceFilter(this.value)">
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID / SEARCH RESULTS -->
+  <section class="section">
+    <h2 id="section-title">پیشنهادهای داغ</h2>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> ایران‌مارکت — الهام‌گرفته از علی‌اکسپرس و دیجی‌کالا.</p>
+    <p class="muted">تمامی قیمت‌ها نمونه هستند. اتصال به API تأمین‌کننده‌ها به‌صورت سفارشی افزوده می‌شود.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
