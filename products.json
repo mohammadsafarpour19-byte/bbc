@@ -1,0 +1,163 @@
+{
+  "hero": [
+    {
+      "badge": "کمپین فصل",
+      "title": "فروش ویژه پاییزی",
+      "desc": "",
+      "image": "assets/hero1.svg"
+    }
+  ],
+  "deals": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "هندزفری بلوتوثی رومیزی",
+      "categories": [
+        "لوازم دیجیتال"
+      ],
+      "tags": [
+        "اسپیکر",
+        "بلوتوث"
+      ],
+      "price": 890000,
+      "old_price": 0,
+      "discount_percent": 0,
+      "image": "assets/speaker.svg",
+      "source": "Temu",
+      "badges": [],
+      "rating": 4.7,
+      "reviews": 140,
+      "purchases": 5200,
+      "recommended": true,
+      "added_at": "2025-09-10"
+    },
+    {
+      "id": 2,
+      "title": "ست تیشرت و شلوار بچگانه",
+      "categories": [
+        "بچگانه",
+        "زنانه"
+      ],
+      "tags": [
+        "لباس",
+        "بچگانه"
+      ],
+      "price": 480000,
+      "old_price": 590000,
+      "discount_percent": 19,
+      "image": "assets/kids.svg",
+      "source": "AliExpress",
+      "badges": [
+        "جدید"
+      ],
+      "rating": 4.8,
+      "reviews": 210,
+      "purchases": 3100,
+      "recommended": false,
+      "added_at": "2025-09-18"
+    },
+    {
+      "id": 3,
+      "title": "ساعت هوشمند اسپرت",
+      "categories": [
+        "لوازم دیجیتال"
+      ],
+      "tags": [
+        "ساعت",
+        "هوشمند"
+      ],
+      "price": 1450000,
+      "old_price": 1890000,
+      "discount_percent": 23,
+      "image": "assets/watch.svg",
+      "source": "Temu",
+      "badges": [
+        "پیشنهادی"
+      ],
+      "rating": 4.2,
+      "reviews": 310,
+      "purchases": 4500,
+      "recommended": true,
+      "added_at": "2025-10-01"
+    },
+    {
+      "id": 4,
+      "title": "هندزفری TWS مدل X",
+      "categories": [
+        "موبایل و لوازم جانبی"
+      ],
+      "tags": [
+        "هندزفری",
+        "بلوتوث"
+      ],
+      "price": 560000,
+      "old_price": 780000,
+      "discount_percent": 28,
+      "image": "assets/mobile.svg",
+      "source": "Temu",
+      "badges": [
+        "پرفروش"
+      ],
+      "rating": 4.3,
+      "reviews": 350,
+      "purchases": 6200,
+      "recommended": true,
+      "added_at": "2025-09-20"
+    },
+    {
+      "id": 5,
+      "title": "کفش کتانی مردانه",
+      "categories": [
+        "کفش",
+        "مردانه"
+      ],
+      "tags": [
+        "کفش",
+        "کتانی"
+      ],
+      "price": 920000,
+      "old_price": 1280000,
+      "discount_percent": 28,
+      "image": "assets/shoes.svg",
+      "source": "AliExpress",
+      "badges": [
+        "ویژه"
+      ],
+      "rating": 4.6,
+      "reviews": 520,
+      "purchases": 9800,
+      "recommended": true,
+      "added_at": "2025-09-28"
+    },
+    {
+      "id": 6,
+      "title": "هود آشپزخانه شیشه‌ای",
+      "categories": [
+        "خانه و آشپزخانه"
+      ],
+      "tags": [
+        "هود",
+        "آشپزخانه"
+      ],
+      "price": 6400000,
+      "old_price": 7250000,
+      "discount_percent": 12,
+      "image": "assets/home.svg",
+      "source": "AliExpress",
+      "badges": [
+        "ارسال سریع"
+      ],
+      "rating": 4.1,
+      "reviews": 95,
+      "purchases": 1600,
+      "recommended": false,
+      "added_at": "2025-08-30"
+    }
+  ]
+}

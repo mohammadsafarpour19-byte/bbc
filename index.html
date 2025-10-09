@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ایران‌مارکت | فروشگاه</title>
+  <meta name="description" content="فروشگاه آنلاین الهام‌گرفته از علی‌اکسپرس و دیجی‌کالا — بدون محاسبه سفارش اختصاصی.">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-row">
+    <a class="brand" href="#home">ایران‌مارکت</a>
+    <form class="search" onsubmit="event.preventDefault(); doSearch(this.q.value);">
+      <input name="q" id="q" placeholder="جستجو در محصولات...">
+      <button aria-label="جستجو">🔎</button>
+    </form>
+    <div class="actions">
+      <a href="#" title="ورود">ورود</a>
+      <a href="#" title="سبد" class="cart">🛒 <span id="cart-count">0</span></a>
+    </div>
+  </div>
+  <nav class="nav container" aria-label="دسته‌بندی‌ها">
+    <button class="menu-toggle" aria-expanded="false">☰ منو</button>
+    <ul class="menu" id="main-menu">
+      <li class="has-mega"><a href="#cat/زنانه">زنانه</a></li>
+      <li class="has-mega"><a href="#cat/مردانه">مردانه</a></li>
+      <li class="has-mega"><a href="#cat/بچگانه">بچگانه</a></li>
+      <li><a href="#cat/کفش">کفش</a></li>
+      <li><a href="#cat/کیف و اکسسوری">کیف و اکسسوری</a></li>
+      <li><a href="#cat/زیبایی و بهداشت">زیبایی و بهداشت</a></li>
+      <li class="has-mega"><a href="#cat/لوازم دیجیتال">لوازم دیجیتال</a></li>
+      <li><a href="#cat/موبایل و لوازم جانبی">موبایل و لوازم جانبی</a></li>
+      <li><a href="#cat/خانه و آشپزخانه">خانه و آشپزخانه</a></li>
+      <li><a href="#cat/ورزش و سفر">ورزش و سفر</a></li>
+      <li><a href="#cat/خودرو و ابزار">خودرو و ابزار</a></li>
+      <li><a href="#deals">تخفیف‌های ویژه ⚡</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero" id="home">
+    <div class="slider" id="hero-slider" aria-label="اسلایدر تخفیف‌ها"></div>
+  </section>
+
+  <!-- DEALS + STRIPS -->
+  <section class="deals-strip" aria-label="تخفیف‌های ویژه">
+    <h2>تخفیف‌های ویژه</h2>
+    <div class="strip" id="deals-strip"></div>
+  </section>
+
+  <section class="deals-strip" aria-label="جدیدترین‌ها">
+    <h2>جدیدترین‌ها</h2>
+    <div class="strip" id="new-strip"></div>
+  </section>
+
+  <section class="deals-strip" aria-label="پرفروش‌ترین‌ها">
+    <h2>پرفروش‌ترین‌ها</h2>
+    <div class="strip" id="best-strip"></div>
+  </section>
+
+  <section class="deals-strip" aria-label="بیشترین رضایت">
+    <h2>بیشترین رضایت</h2>
+    <div class="strip" id="toprated-strip"></div>
+  </section>
+
+  <section class="deals-strip" aria-label="دیگران توصیه می‌کنند">
+    <h2>دیگران توصیه می‌کنند</h2>
+    <div class="strip" id="reco-strip"></div>
+  </section>
+
+  <!-- GRID -->
+  <section class="section">
+    <h2 id="section-title">پیشنهادهای داغ</h2>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> ایران‌مارکت</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
