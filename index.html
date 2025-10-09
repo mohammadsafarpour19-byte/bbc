@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beauty Smart Suite — دموی نوآوری فروش اسکین‌کر</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/@zxing/library@0.20.0"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container header-row">
+    <div class="brand">Beauty Smart Suite</div>
+    <nav class="tabs">
+      <button data-tab="home" class="active">خانه</button>
+      <button data-tab="skinmatch">Skin‑Match AI</button>
+      <button data-tab="routine">Routine Builder</button>
+      <button data-tab="subscribe">اشتراک ماهانه</button>
+      <button data-tab="consult">مشاور زنده</button>
+      <button data-tab="qr">اسکن QR/بارکد</button>
+      <button data-tab="tryon">Virtual Try‑On</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="home" class="tab show">
+    <div class="hero">
+      <h1>پلتفرم هوشمند مراقبت پوست</h1>
+      <p class="muted">دموی قابل‌کلیک از ۶ نوآوری: تطبیق هوشمند محصول، ساخت روتین، اشتراک ماهانه، مشاور زنده، اسکن QR و تست مجازی.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" data-goto="skinmatch">شروع با Skin‑Match</a>
+        <a class="btn" data-goto="tryon">تست مجازی</a>
+      </div>
+    </div>
+    <div class="grid6">
+      <article class="card"><h3>Skin‑Match AI</h3><p>پرسشنامه کوتاه → پیشنهاد هوشمند.</p></article>
+      <article class="card"><h3>Routine Builder</h3><p>روتین صبح/شب شخصی‌سازی‌شده.</p></article>
+      <article class="card"><h3>اشتراک ماهانه</h3><p>جعبه هوشمند بر اساس پروفایل.</p></article>
+      <article class="card"><h3>مشاور زنده</h3><p>چت‌بات + انتقال به کارشناس.</p></article>
+      <article class="card"><h3>اسکن QR/بارکد</h3><p>خواندن ترکیبات → پیشنهاد جایگزین.</p></article>
+      <article class="card"><h3>Virtual Try‑On</h3><p>آپلود سلفی → قبل/بعد.</p></article>
+    </div>
+  </section>
+
+  <section id="skinmatch" class="tab">
+    <h2>Skin‑Match AI</h2>
+    <form id="skinmatch-form" class="panel">
+      <div class="row">
+        <label>نوع پوست
+          <select name="type" required>
+            <option value="">انتخاب...</option>
+            <option value="dry">خشک</option>
+            <option value="oily">چرب</option>
+            <option value="combo">مختلط</option>
+            <option value="normal">نرمال</option>
+            <option value="sensitive">حساس</option>
+          </select>
+        </label>
+        <label>هدف
+          <select name="goal" required>
+            <option value="">انتخاب...</option>
+            <option value="brighten">روشن‌سازی/لکه</option>
+            <option value="hydrate">آبرسانی</option>
+            <option value="antiaging">ضدپیری/خطوط</option>
+            <option value="acne">جوش/آکنه</option>
+            <option value="soothe">آرام‌بخش/حساس</option>
+          </select>
+        </label>
+        <label>بودجه
+          <select name="budget" required>
+            <option value="">انتخاب...</option>
+            <option value="low">اقتصادی</option>
+            <option value="mid">میان‌رده</option>
+            <option value="high">لوکس</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>سن
+          <input type="number" name="age" min="10" max="90" placeholder="مثلاً 28">
+        </label>
+        <label>حساسیت خاص
+          <input type="text" name="allergy" placeholder="مثلاً عطر/الکل">
+        </label>
+      </div>
+      <button class="btn btn-primary" type="submit">دریافت پیشنهاد</button>
+    </form>
+    <div id="skinmatch-result" class="cards"></div>
+  </section>
+
+  <section id="routine" class="tab">
+    <h2>Routine Builder</h2>
+    <form id="routine-form" class="panel">
+      <div class="row">
+        <label>هدف روتین
+          <select name="goal" required>
+            <option value="">انتخاب...</option>
+            <option value="brighten">روشن‌سازی</option>
+            <option value="hydrate">آبرسانی</option>
+            <option value="antiaging">ضدپیری</option>
+            <option value="acne">کنترل آکنه</option>
+            <option value="soothe">آرام‌بخش</option>
+          </select>
+        </label>
+        <label>سطح زمان
+          <select name="time" required>
+            <option value="quick">سریع (۳ مرحله)</option>
+            <option value="balanced">متعادل (۴ مرحله)</option>
+            <option value="pro">کامل (۶ مرحله)</option>
+          </select>
+        </label>
+      </div>
+      <button class="btn btn-primary" type="submit">ساخت روتین</button>
+    </form>
+    <div class="grid2">
+      <div><h3>صبح</h3><ol id="routine-am"></ol></div>
+      <div><h3>شب</h3><ol id="routine-pm"></ol></div>
+    </div>
+  </section>
+
+  <section id="subscribe" class="tab">
+    <h2>اشتراک ماهانه</h2>
+    <div class="grid3">
+      <div class="plan card"><h3>نقره‌ای</h3><p class="muted">۳ محصول منتخب + تستر</p><div class="price">۹۹۰٬۰۰۰</div><button class="btn btn-primary" data-plan="silver">انتخاب</button></div>
+      <div class="plan card"><h3>طلایی</h3><p class="muted">۴ محصول + ۲ تستر + ماسک</p><div class="price">۱٬۴۹۰٬۰۰۰</div><button class="btn btn-primary" data-plan="gold">انتخاب</button></div>
+      <div class="plan card"><h3>پلاتینیوم</h3><p class="muted">۵ محصول + ۳ تستر + ابزار کوچک</p><div class="price">۲٬۲۹۰٬۰۰۰</div><button class="btn btn-primary" data-plan="platinum">انتخاب</button></div>
+    </div>
+    <div id="box-preview" class="cards"></div>
+  </section>
+
+  <section id="consult" class="tab">
+    <h2>مشاور زنده</h2>
+    <div class="chat">
+      <div id="chat-log" class="chat-log"></div>
+      <div class="chat-input">
+        <input id="chat-text" placeholder="سؤال پوستت رو بپرس...">
+        <button id="chat-send" class="btn btn-primary">ارسال</button>
+      </div>
+      <div class="muted sm">*دمو: قوانین ساده + دکمهٔ «اتصال به کارشناس» فقط نمایش آزمایشی دارد.</div>
+    </div>
+    <dialog id="handoff">
+      <h3>اتصال به کارشناس</h3>
+      <p>در نسخهٔ واقعی، اینجا به واتساپ/تلگرام/CRM وصل می‌شود.</p>
+      <button class="btn" onclick="document.getElementById('handoff').close()">باشه</button>
+    </dialog>
+  </section>
+
+  <section id="qr" class="tab">
+    <h2>اسکن QR/بارکد</h2>
+    <div class="panel">
+      <div class="row">
+        <select id="camera-select"></select>
+        <button class="btn" id="qr-start">شروع اسکن</button>
+        <button class="btn" id="qr-stop">توقف</button>
+      </div>
+      <video id="preview" playsinline></video>
+      <div id="qr-output" class="cards"></div>
+      <div class="muted sm">*برای تست: QR با متن <code>INCI: niacinamide, hyaluronic acid</code> یا <code>EAN: 5901234567890</code>.</div>
+    </div>
+  </section>
+
+  <section id="tryon" class="tab">
+    <h2>Virtual Try‑On (دمو)</h2>
+    <div class="panel">
+      <input type="file" id="selfie" accept="image/*">
+      <div class="tryon-wrap">
+        <div class="tryon before"><canvas id="c1"></canvas><div class="tag">قبل</div></div>
+        <div class="tryon after"><canvas id="c2"></canvas><div class="tag">بعد</div></div>
+      </div>
+      <div class="row">
+        <label>روشنایی <input type="range" id="bright" min="-40" max="40" value="10"></label>
+        <label>نرمی بافت <input type="range" id="smooth" min="0" max="8" value="2"></label>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container"><p>© <span id="year"></span> Beauty Smart Suite — Demo</p></div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
